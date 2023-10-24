@@ -1,10 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
-<<<<<<< HEAD
 
-=======
 from .models import Profile  # for user profile configs
->>>>>>> profile-configs
+
 
 class LoginForm(forms.Form):
     username = forms.CharField()
@@ -25,22 +23,20 @@ class UserRegistrationForm(forms.ModelForm):
             raise forms.ValidationError('Password don\'t match.')
         return cd['password2']
     
-<<<<<<< HEAD
+
     def clean_email(self):  # used clean_fieldname method
         data = self.cleaned_data['email']
         if User.objects.filter(email=data).exists():
             raise forms.ValidationError('Email already in use.')
         return data
     
-=======
->>>>>>> profile-configs
 
 class UserEditForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'email']
 
-<<<<<<< HEAD
+
         def clean_email(self):
             data = self.cleaned_data['email']
             queryset = User.objects.exclude(id=self.instance.id).filter(email=data)
@@ -49,11 +45,11 @@ class UserEditForm(forms.ModelForm):
             return data
         
         
-=======
+
 
 class ProfileEditForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['date_of_birth', 'photo']
 
->>>>>>> profile-configs
+
