@@ -5,7 +5,7 @@
 {% block content %}
 
 <h1>Edit your account</h1>
-
+<!-- The enctype='multipart/form-data' is used to submit two forms at the same time -->
 <p>You can edit your account using the following form:</p>
 <form method="post" enctype="multipart/form-data">
     {{ user_form.as_p }}
