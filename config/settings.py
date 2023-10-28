@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-k-21fl*04b^dqg^9ly6r!5&^gs3^o--8zs1liwk-ev==82l56&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     # without changing the position of the account app sitting 
     #  right on top of the admin app
     'account.apps.AccountConfig',
-
+   
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,7 +44,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+
+    # 3rd party apps
+    'social_django',  # for social authentications
+    'django_extensions',
+
+
     # Local apps
+    'images.apps.ImagesConfig',
     
 ]
 
@@ -143,5 +150,11 @@ LOGOUT_URL = 'logout'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',  # social auth for facebook
+
 ]
+
+SOCIAL_AUTH_FACEBOOK_KEY = '348401351184710' # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'db1bda9489858472fb8f3e04d8038b95' # Facebook App Secret
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']  # optional for facebook users
 
