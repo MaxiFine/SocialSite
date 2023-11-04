@@ -24,8 +24,8 @@ class Image(models.Model):
             ]
         ordering = ['-created']
 
-        def __str__(self):
-            return self.title
+    def __str__(self):
+        return self.title
     
     # overiding save() to include slug automatically
     def save(self, *args, **kwargs):

@@ -32,7 +32,8 @@ class ImageCreateForm(forms.ModelForm):
     # Using the Request library (pip install requests==2.28.1)
     # to retrieve the image by its url, so we'll override the
     # save()
-    def save(self, force_insert=False, force_update=False,
+    def save(self, force_insert=False, 
+             force_update=False,
              commit=True):
         image = super().save(commit=False)
         image_url = self.cleaned_data['url']
