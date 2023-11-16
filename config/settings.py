@@ -25,7 +25,6 @@ SECRET_KEY = 'django-insecure-k-21fl*04b^dqg^9ly6r!5&^gs3^o--8zs1liwk-ev==82l56&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-
 ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 # Application definition
@@ -159,7 +158,7 @@ AUTHENTICATION_BACKENDS = [
 
 ]
 
-SOCIAL_AUTH_FACEBOOK_KEY = '348401351184710' # Facebook App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = 'db1bda9489858472fb8f3e04d8038b95' # Facebook App Secret
-SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']  # optional for facebook users
+# SOCIAL_AUTH_FACEBOOK_KEY = '348401351184710' # Facebook App ID
+# SOCIAL_AUTH_FACEBOOK_SECRET = 'db1bda9489858472fb8f3e04d8038b95' # Facebook App Secret
+# SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']  # optional for facebook users
 
